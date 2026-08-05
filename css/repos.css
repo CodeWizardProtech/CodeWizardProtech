@@ -1,0 +1,81 @@
+/* Lista de repositórios */
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.repo {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.15rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 120px;
+  cursor: pointer;
+}
+
+.repo:hover {
+  border-color: var(--accent-2);
+  transform: translateY(-3px);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.repo:focus {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+.repo-name {
+  font-weight: 600;
+  color: var(--accent-2);
+  font-size: 1.02rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repo-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.repo-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.repo-meta span::before {
+  content: attr(data-icon);
+  font-size: 0.9rem;
+}
+
+@supports not (-webkit-line-clamp: 2) {
+  .repo-desc {
+    max-height: 2.8em;
+    overflow: hidden;
+  }
+}
