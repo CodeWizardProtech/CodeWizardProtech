@@ -4,7 +4,7 @@ export const CONFIG = {
   apiBase: 'https://api.github.com',
   topReposLimit: 6,
   // Atualização automática dos dados (ms)
-  refreshInterval: 60 * 1000,
+  refreshInterval: 10 * 60 * 1000,
   activityMonths: 6,
   locale: 'pt-BR',
 };

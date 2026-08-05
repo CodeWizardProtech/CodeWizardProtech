@@ -59,10 +59,6 @@ export function init() {
   startAutoRefresh();
 
   el('#refresh')?.addEventListener('click', () => update());
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') update({ silent: true });
-  });
 }
 
 init();
