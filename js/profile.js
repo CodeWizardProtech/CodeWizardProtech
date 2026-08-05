@@ -21,6 +21,9 @@ export function renderProfile(user) {
         <a class="btn btn-primary" href="${user.html_url}" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
         ${blogUrl ? `<a class="btn btn-secondary" href="${blogUrl}" target="_blank" rel="noopener noreferrer">Site/Blog</a>` : ''}
         ${user.twitter_username ? `<a class="btn btn-secondary" href="https://x.com/${escapeHtml(user.twitter_username)}" target="_blank" rel="noopener noreferrer">X / Twitter</a>` : ''}
+        <a class="btn btn-secondary" href="https://github.com/DedicatedDevExpert" target="_blank" rel="noopener noreferrer">🐙 GitHub Alt</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/marcosoliveiraso/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/marcos.agenteia/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
       </div>
     </div>
   `,
