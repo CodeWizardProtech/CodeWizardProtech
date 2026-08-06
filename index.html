@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
   <meta name="theme-color" content="#050508">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>CodeWizardProtech | Dashboard GitHub</title>
-  <meta name="description" content="Dashboard profissional com estatísticas, gráficos e repositórios do perfil CodeWizardProtech no GitHub.">
-  <meta property="og:title" content="CodeWizardProtech | Dashboard GitHub">
-  <meta property="og:description" content="Dashboard profissional com estatísticas, gráficos e repositórios do perfil CodeWizardProtech no GitHub.">
+  <title>CodeWizardProtech | GitHub Dashboard</title>
+  <meta name="description" content="Professional dashboard with stats, charts and repositories from the CodeWizardProtech GitHub profile.">
+  <meta property="og:title" content="CodeWizardProtech | GitHub Dashboard">
+  <meta property="og:description" content="Professional dashboard with stats, charts and repositories from the CodeWizardProtech GitHub profile.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧑‍💻</text></svg>">
@@ -27,39 +27,39 @@
     <header class="topbar">
       <h1 class="brand">MarcosDev</h1>
       <div class="topbar-actions">
-        <span id="status" class="status" data-state="loading" aria-live="polite" aria-atomic="true">Carregando dados...</span>
-        <button id="refresh" class="btn btn-ghost" type="button" aria-label="Atualizar dados do perfil">Atualizar</button>
+        <span id="status" class="status" data-state="loading" aria-live="polite" aria-atomic="true">Loading data...</span>
+        <button id="refresh" class="btn btn-ghost" type="button" aria-label="Refresh profile data">Refresh</button>
       </div>
     </header>
 
     <p id="error" class="error" hidden role="alert"></p>
 
-    <section id="profile" class="panel profile" aria-label="Perfil do usuário"></section>
+    <section id="profile" class="panel profile" aria-label="User profile"></section>
 
-    <section id="metrics" class="metrics" aria-label="Métricas do perfil"></section>
+    <section id="metrics" class="metrics" aria-label="Profile metrics"></section>
 
-    <section class="charts" aria-label="Gráficos de estatísticas">
+    <section class="charts" aria-label="Statistics charts">
       <article class="panel chart-card">
-        <h2>Linguagens</h2>
+        <h2>Languages</h2>
         <div id="chart-languages"></div>
       </article>
       <article class="panel chart-card">
-        <h2>Top repositórios por estrelas</h2>
+        <h2>Top repositories by stars</h2>
         <div id="chart-stars"></div>
       </article>
       <article class="panel chart-card chart-wide">
-        <h2>Atividade dos repositórios</h2>
+        <h2>Repository activity</h2>
         <div id="chart-activity"></div>
       </article>
     </section>
 
-    <section class="panel" aria-label="Repositórios recentes">
-      <h2>Repositórios recentes</h2>
+    <section class="panel" aria-label="Recent repositories">
+      <h2>Recent repositories</h2>
       <div id="repos" class="repo-list"></div>
     </section>
 
-    <footer class="footer">Desenvolvido por Marcos Oliveira · <span id="footer-date"></span></footer>
-  <script>document.getElementById('footer-date').textContent = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });</script>
+    <footer class="footer">Developed by Marcos Oliveira · <span id="footer-date"></span></footer>
+  <script>document.getElementById('footer-date').textContent = new Date().toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' });</script>
   </div>
 
   <script type="module" src="js/app.js"></script>

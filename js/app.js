@@ -5,7 +5,7 @@ import { renderProfile, computeMetrics, renderMetrics } from './profile.js';
 import { renderRepos } from './repos.js';
 import { renderCharts } from './charts.js';
 
-// Orquestra tudo. Praticamente sem HTML.
+// Orchestrates everything. Minimal HTML.
 let timer = null;
 
 function setStatus(state, text) {
@@ -19,7 +19,7 @@ function showError(message) {
   const node = el('#error');
   if (!node) return;
   node.hidden = false;
-  node.textContent = `Erro ao carregar dados: ${message}`;
+  node.textContent = `Error loading data: ${message}`;
 }
 
 function hideError() {
@@ -28,7 +28,7 @@ function hideError() {
 }
 
 async function update({ silent = false } = {}) {
-  if (!silent) setStatus('loading', 'Carregando dados...');
+  if (!silent) setStatus('loading', 'Loading data...');
 
   try {
     const { user, repos, updatedAt } = await getProfileData();
@@ -40,9 +40,9 @@ async function update({ silent = false } = {}) {
 
     document.body.classList.add('ready');
     hideError();
-    setStatus('ok', `Atualizado às ${formatTime(updatedAt)}`);
+    setStatus('ok', `Updated at ${formatTime(updatedAt)}`);
   } catch (error) {
-    setStatus('error', 'Falha na atualização');
+    setStatus('error', 'Update failed');
     if (!document.body.classList.contains('ready')) showError(error.message);
   }
 }

@@ -1,25 +1,25 @@
 import { escapeHtml, formatUrl, formatNumber, formatDate, setHtml } from './utils.js';
 
-// Somente o cabeçalho do perfil e os indicadores. Nada de gráficos.
+// Profile header and metrics only. No charts.
 export function renderProfile(user) {
   const blogUrl = formatUrl(user.blog);
 
   setHtml(
     '#profile',
     `
-    <img class="avatar" src="${user.avatar_url}" alt="Avatar de ${escapeHtml(user.name || user.login)}" loading="eager" decoding="async">
+    <img class="avatar" src="${user.avatar_url}" alt="Avatar of ${escapeHtml(user.name || user.login)}" loading="eager" decoding="async">
     <div class="profile-info">
       <h1>${escapeHtml(user.name || user.login)}</h1>
       <p class="username">@${escapeHtml(user.login)}</p>
-      <p class="bio">${escapeHtml(user.bio || 'Desenvolvedor(a) no GitHub')}</p>
+      <p class="bio">${escapeHtml(user.bio || 'GitHub Developer')}</p>
       <div class="profile-meta">
         ${user.location ? `<span>📍 ${escapeHtml(user.location)}</span>` : ''}
         ${user.company ? `<span>🏢 ${escapeHtml(user.company)}</span>` : ''}
-        <span>📅 Desde ${formatDate(user.created_at)}</span>
+        <span>📅 Since ${formatDate(user.created_at)}</span>
       </div>
       <div class="links">
-        <a class="btn btn-primary" href="${user.html_url}" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-        ${blogUrl ? `<a class="btn btn-secondary" href="${blogUrl}" target="_blank" rel="noopener noreferrer">Site/Blog</a>` : ''}
+        <a class="btn btn-primary" href="${user.html_url}" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        ${blogUrl ? `<a class="btn btn-secondary" href="${blogUrl}" target="_blank" rel="noopener noreferrer">Website/Blog</a>` : ''}
         ${user.twitter_username ? `<a class="btn btn-secondary" href="https://x.com/${escapeHtml(user.twitter_username)}" target="_blank" rel="noopener noreferrer">X / Twitter</a>` : ''}
         <a class="btn btn-secondary" href="https://github.com/DedicatedDevExpert" target="_blank" rel="noopener noreferrer">🐙 GitHub Alt</a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/marcosoliveiraso/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
@@ -75,23 +75,23 @@ export function renderMetrics(metrics) {
   setHtml(
     '#metrics',
     [
-      card('⭐', 'Estrelas recebidas', formatNumber(metrics.totalStars)),
-      card('🍴', 'Total de forks', formatNumber(metrics.totalForks)),
-      card('💻', 'Linguagem mais usada', escapeHtml(metrics.topLanguage)),
-      card('📦', 'Repositórios públicos', formatNumber(metrics.publicRepos)),
-      card('📝', 'Gists públicos', formatNumber(metrics.gists)),
-      card('👥', 'Seguidores', formatNumber(metrics.followers), `Seguindo ${formatNumber(metrics.following)}`),
-      card('🎂', 'Conta criada em', formatDate(metrics.createdAt)),
-      card('🔄', 'Perfil atualizado', formatDate(metrics.profileUpdatedAt)),
+      card('⭐', 'Stars received', formatNumber(metrics.totalStars)),
+      card('🍴', 'Total forks', formatNumber(metrics.totalForks)),
+      card('💻', 'Top language', escapeHtml(metrics.topLanguage)),
+      card('📦', 'Public repositories', formatNumber(metrics.publicRepos)),
+      card('📝', 'Public gists', formatNumber(metrics.gists)),
+      card('👥', 'Followers', formatNumber(metrics.followers), `Following ${formatNumber(metrics.following)}`),
+      card('🎂', 'Account created', formatDate(metrics.createdAt)),
+      card('🔄', 'Profile updated', formatDate(metrics.profileUpdatedAt)),
       card(
         '🏆',
-        'Repositório mais popular',
+        'Most popular repository',
         escapeHtml(metrics.mostPopular?.name || '—'),
         metrics.mostPopular ? `⭐ ${formatNumber(metrics.mostPopular.stargazers_count)}` : '',
       ),
       card(
         '⏱️',
-        'Atualizado recentemente',
+        'Recently updated',
         escapeHtml(metrics.mostRecent?.name || '—'),
         metrics.mostRecent ? formatDate(metrics.mostRecent.updated_at) : '',
       ),

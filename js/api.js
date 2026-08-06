@@ -4,9 +4,9 @@ async function getJson(url) {
   const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
 
   if (!res.ok) {
-    if (res.status === 404) throw new Error('Perfil não encontrado');
-    if (res.status === 403) throw new Error('Limite de requisições da API do GitHub atingido. Tente novamente em alguns minutos.');
-    throw new Error(`Erro ao buscar dados (${res.status})`);
+    if (res.status === 404) throw new Error('Profile not found');
+    if (res.status === 403) throw new Error('GitHub API rate limit reached. Please try again in a few minutes.');
+    throw new Error(`Error fetching data (${res.status})`);
   }
 
   return res.json();

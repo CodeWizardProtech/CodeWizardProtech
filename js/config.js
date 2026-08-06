@@ -6,7 +6,7 @@ export const CONFIG = {
   // Atualização automática dos dados (ms)
   refreshInterval: 10 * 60 * 1000,
   activityMonths: 6,
-  locale: 'pt-BR',
+  locale: 'en-US',
 };
 
 // Cores por linguagem usadas nos gráficos

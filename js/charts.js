@@ -1,7 +1,7 @@
 import { CONFIG } from './config.js';
 import { escapeHtml, formatNumber, languageColor, monthLabel, setHtml } from './utils.js';
 
-// Somente gráficos (SVG puro, sem bibliotecas externas).
+// Charts only (pure SVG, no external libraries).
 
 function polar(cx, cy, r, angle) {
   const rad = ((angle - 90) * Math.PI) / 180;
@@ -34,7 +34,7 @@ export function renderPieChart(repos) {
   const total = data.reduce((s, d) => s + d.value, 0);
 
   if (!total) {
-    setHtml('#chart-languages', '<p class="empty">Sem linguagens detectadas.</p>');
+    setHtml('#chart-languages', '<p class="empty">No languages detected.</p>');
     return;
   }
 
@@ -63,7 +63,7 @@ export function renderPieChart(repos) {
     '#chart-languages',
     `
     <div class="pie-wrap">
-      <svg viewBox="0 0 220 220" role="img" aria-label="Distribuição de linguagens">
+      <svg viewBox="0 0 220 220" role="img" aria-label="Language distribution">
         ${slices}
         <text x="110" y="104" class="pie-center-value">${total}</text>
         <text x="110" y="126" class="pie-center-label">repos</text>
@@ -82,7 +82,7 @@ export function renderBarChart(repos) {
     .map((r) => ({ name: r.name, value: r.stargazers_count || 0 }));
 
   if (data.length === 0) {
-    setHtml('#chart-stars', '<p class="empty">Sem repositórios para exibir.</p>');
+    setHtml('#chart-stars', '<p class="empty">No repositories to display.</p>');
     return;
   }
 
@@ -150,7 +150,7 @@ export function renderLineChart(repos) {
 
   setHtml(
     '#chart-activity',
-    `<svg viewBox="0 0 ${w} ${h}" class="line-chart" role="img" aria-label="Atividade dos repositórios por mês">
+    `<svg viewBox="0 0 ${w} ${h}" class="line-chart" role="img" aria-label="Repository activity by month">
       <defs>
         <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35" />
