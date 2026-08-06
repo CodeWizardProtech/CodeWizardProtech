@@ -113,7 +113,8 @@ docs/
 | Logic | Vanilla JavaScript (ES Modules) |
 | Data | [GitHub REST API v3](https://docs.github.com/en/rest) |
 | Fonts | [Inter — Google Fonts](https://fonts.google.com/specimen/Inter) |
-| Deployment | [Netlify](https://netlify.com) |
+| Deployment | [GitHub Pages](https://pages.github.com) |
+
 
 ---
 
