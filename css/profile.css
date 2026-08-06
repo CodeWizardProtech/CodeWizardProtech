@@ -90,10 +90,11 @@
 
 .links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.75rem;
   margin-top: 1.25rem;
   align-items: center;
+  overflow-x: auto;
 }
 
 .links a {
