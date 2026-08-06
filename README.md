@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=22&pause=1000&color=22D3EE&center=true&vCenter=true&width=500&lines=👇+View+my+professional+dashboard" alt="View my professional dashboard" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=24&pause=1000&color=22D3EE&center=true&vCenter=true&width=600&lines=👇+View+my+professional+dashboard;Built+with+HTML%2C+CSS+%26+JavaScript" alt="View my professional dashboard" />
 </p>
 
 <p align="center">
