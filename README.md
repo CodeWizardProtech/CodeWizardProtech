@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://codewizardprotech.netlify.app">
-    <img src="assets/CodeWizardProtech-Dashboard-GitHub.png" alt="Click to visit my dashboard" width="100%" />
+    <img src="docs/assets/CodeWizardProtech-Dashboard-GitHub.png" alt="Click to visit my dashboard" width="100%" />
   </a>
 </p>
 
