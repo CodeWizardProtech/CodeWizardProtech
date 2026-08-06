@@ -35,7 +35,7 @@
   .repo-list { grid-template-columns: 1fr; }
   .profile { flex-direction: column; text-align: center; gap: 1.25rem; }
   .profile-meta, .links { justify-content: center; }
-  .avatar { width: 130px; height: 130px; border: 3px solid var(--accent); }
+  .avatar { width: 140px; height: 140px; border: 3px solid var(--accent); }
   .profile-info h1 { font-size: 1.6rem; }
   .pie-wrap { justify-content: center; }
   .pie-wrap svg { width: 160px; height: 160px; }
@@ -52,7 +52,7 @@
   .metrics { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .profile { flex-direction: column; text-align: center; gap: 1rem; }
   .profile-meta, .links { justify-content: center; flex-direction: column; align-items: center; }
-  .avatar { width: 120px; height: 120px; border: 3px solid var(--accent); }
+  .avatar { width: 130px; height: 130px; border: 3px solid var(--accent); }
   .profile-info h1 { font-size: 1.3rem; }
   .bio { font-size: 0.9rem; }
   .brand { font-size: 1rem; }
@@ -83,7 +83,7 @@
   .profile { flex-direction: column; text-align: center; gap: 0.75rem; }
   .profile-meta { flex-direction: column; align-items: center; font-size: 0.8rem; gap: 0.5rem; }
   .links { flex-direction: column; gap: 0.5rem; width: 100%; }
-  .avatar { width: 110px; height: 110px; border: 3px solid var(--accent); }
+  .avatar { width: 120px; height: 120px; border: 3px solid var(--accent); }
   .profile-info h1 { font-size: 1.1rem; font-weight: 700; }
   .profile-info { padding: 0; }
   .bio { font-size: 0.8rem; line-height: 1.4; }
@@ -121,7 +121,7 @@
   .metric-value { font-size: 0.9rem; }
   .metric-label { font-size: 0.6rem; }
   .profile { gap: 0.6rem; }
-  .avatar { width: 105px; height: 105px; border: 2px solid var(--accent); }
+  .avatar { width: 110px; height: 110px; border: 2px solid var(--accent); }
   .profile-info h1 { font-size: 1rem; }
   .bio { font-size: 0.75rem; }
   .profile-meta { font-size: 0.75rem; gap: 0.4rem; }
@@ -149,7 +149,7 @@
 @media (orientation: landscape) and (max-height: 600px) {
   body { padding: 0.75rem; }
   .profile { gap: 1rem; }
-  .avatar { width: 80px; height: 80px; }
+  .avatar { width: 100px; height: 100px; }
   .profile-info h1 { font-size: 1.3rem; }
   .metrics { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
   .charts { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -160,7 +160,7 @@
 @media (orientation: landscape) and (max-height: 500px) {
   .dashboard { gap: 0.75rem; }
   .panel { padding: 0.9rem; }
-  .avatar { width: 70px; height: 70px; }
+  .avatar { width: 90px; height: 90px; }
   .metrics { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
 }
 

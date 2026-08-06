@@ -4,7 +4,7 @@
 
 ### 320px - 374px (Celulares muito pequenos)
 - [ ] Sem scroll horizontal
-- [ ] Avatar visível e centralizado (72px)
+- [ ] Avatar visível e centralizado (110px)
 - [ ] Texto legível sem zoom
 - [ ] Botões clicáveis (min 44x44px)
 - [ ] Descrição dos repositórios com apenas 1 linha
@@ -12,7 +12,7 @@
 - [ ] Topbar em coluna única
 
 ### 375px - 479px (Celulares pequenos)
-- [ ] Avatar 80px
+- [ ] Avatar 120px
 - [ ] Título do perfil legível (1.1rem)
 - [ ] Descrição com 1-2 linhas
 - [ ] Métricas em coluna única
@@ -20,7 +20,7 @@
 - [ ] Botões com boa espaçamento
 
 ### 480px - 639px (Celulares médios)
-- [ ] Avatar 90px
+- [ ] Avatar 130px
 - [ ] Métricas em 2 colunas
 - [ ] Gráficos ainda em 1 coluna
 - [ ] Repositórios em 1 coluna
@@ -28,7 +28,7 @@
 - [ ] Conteúdo centralizado
 
 ### 640px - 859px (Tablets pequenos)
-- [ ] Avatar 100px
+- [ ] Avatar 140px
 - [ ] Profile em coluna (vertical)
 - [ ] Métricas em 2 colunas
 - [ ] Gráficos em 1 coluna
@@ -36,7 +36,7 @@
 - [ ] Padding apropriado
 
 ### 860px - 1023px (Tablets)
-- [ ] Avatar 100px
+- [ ] Avatar 120px-180px (clamp)
 - [ ] Profile normal (horizontal)
 - [ ] Métricas em 3 colunas
 - [ ] Gráficos ainda em 1 coluna
@@ -57,10 +57,12 @@
 
 ### Landscape - Altura < 500px
 - [ ] Layouts ajustados para altura reduzida
+- [ ] Avatar 90px
 - [ ] Métricas em 3 colunas
 - [ ] Gráficos em 2 colunas
 
 ### Landscape - Altura 500px - 600px
+- [ ] Avatar 100px
 - [ ] Métricas em 4 colunas
 - [ ] Gráficos em 2 colunas
 

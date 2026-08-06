@@ -54,27 +54,27 @@
 **Mobile (320-374px):**
 - Padding reduzido para `0.6rem 0.4rem 1.2rem`
 - Métricas em coluna única
-- Avatar reduzido para `72px`
+- Avatar aumentado para `110px` (garante visibilidade)
 - Título reduzido para `1rem`
 - Descrição com `line-clamp: 1`
 
 **Extra Small (375-479px):**
 - Padding `0.75rem 0.5rem 1.5rem`
 - Métricas ainda em coluna única
-- Avatar `80px`
+- Avatar `120px` (era 80px)
 - Título `1.1rem`
 
 **Small (480-639px):**
 - Padding `1rem 0.75rem 2rem`
 - Métricas em 2 colunas
-- Avatar `90px`
+- Avatar `130px` (era 90px)
 - Topbar em coluna única
 - Botões com 100% width
 
 **Tablet (640-859px):**
 - Padding `1.25rem 0.875rem 2rem`
 - Métricas em 2 colunas
-- Avatar `100px`
+- Avatar `140px` (era 100px)
 - Profile em coluna com center
 - Gráficos em 1 coluna
 

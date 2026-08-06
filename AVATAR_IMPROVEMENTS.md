@@ -8,11 +8,12 @@
 - A imagem agora carrega imediatamente quando a página abre
 
 ### 2. **Avatar Aumentado**
-- **Desktop**: 140px (era 120px) - 16% maior
-- **Tablet**: 110px (era 100px) - 10% maior
-- **Mobile Médio**: 100px (era 90px) - 11% maior
-- **Mobile Pequeno**: 95px (era 80px) - 18% maior
-- **Mobile Tiny**: 90px (era 72px) - 25% maior
+- **Desktop**: 200px (min-width: 1024px)
+- **Tablet**: 140px (era 130px)
+- **Mobile Médio**: 130px (era 120px)
+- **Mobile Pequeno**: 120px (era 110px)
+- **Mobile Tiny**: 110px (era 105px)
+- **Landscape**: 90px-100px (era 70px-80px)
 
 ### 3. **Efeitos Visuais Melhorados**
 
@@ -60,11 +61,11 @@ box-shadow: /* Sombras aumentadas */
 
 | Dispositivo | Antes | Depois | Aumento |
 |-------------|-------|--------|---------|
-| Desktop | 120px | 140px | +16% ↑ |
-| Tablet Médio | 100px | 110px | +10% ↑ |
-| Mobile Médio | 90px | 100px | +11% ↑ |
-| Mobile Pequeno | 80px | 95px | +18% ↑ |
-| Mobile Tiny | 72px | 90px | +25% ↑ |
+| Desktop | 120px | 200px | +66% ↑ |
+| Tablet Médio | 100px | 140px | +40% ↑ |
+| Mobile Médio | 90px | 130px | +44% ↑ |
+| Mobile Pequeno | 80px | 120px | +50% ↑ |
+| Mobile Tiny | 72px | 110px | +52% ↑ |
 
 ---
 
