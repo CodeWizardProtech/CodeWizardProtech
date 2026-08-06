@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=24&pause=1000&color=22D3EE&center=true&vCenter=true&width=600&lines=👇+View+my+professional+dashboard;Built+with+HTML%2C+CSS+%26+JavaScript" alt="View my professional dashboard" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=22d3ee&height=120&section=header&text=👇%20View%20my%20professional%20dashboard&fontSize=28&fontColor=ffffff&animation=fadeIn" alt="View my professional dashboard" />
 </p>
 
 <p align="center">
