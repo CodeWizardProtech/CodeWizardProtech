@@ -117,7 +117,5 @@ class NeuronBackground {
   }
 }
 
-// Start animation when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  new NeuronBackground();
-});
+// Start animation
+new NeuronBackground();
