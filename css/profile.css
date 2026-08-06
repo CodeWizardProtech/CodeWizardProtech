@@ -7,8 +7,8 @@
 }
 
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: clamp(120px, 22vw, 180px);
+  height: clamp(120px, 22vw, 180px);
   min-width: 120px;
   min-height: 120px;
   border-radius: 50%;
@@ -159,15 +159,15 @@
 @media (min-width: 1024px) {
  .profile {
    display: grid;
-   grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+   grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
    gap: 2.5rem;
    align-items: center;
    justify-content: start;
  }
 
  .avatar {
-   width: 240px;
-   height: 240px;
+   width: 200px;
+   height: 200px;
    border-width: 5px;
  }
 
@@ -196,6 +196,13 @@
 
  .links {
    margin-top: 1.25rem;
+   flex-wrap: nowrap;
+   gap: 0.5rem;
+ }
+
+ .links a.btn {
+   padding: 0.5rem 0.85rem;
+   font-size: 0.82rem;
  }
 }
 
@@ -205,8 +212,8 @@
  }
 
  .avatar {
-   width: 280px;
-   height: 280px;
+   width: 220px;
+   height: 220px;
  }
 
  .profile-info h1 {

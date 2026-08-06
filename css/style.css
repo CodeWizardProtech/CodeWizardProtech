@@ -164,9 +164,8 @@ body {
 .social-nav {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  justify-content: center;
   padding: 1rem;
   background: var(--surface);
   backdrop-filter: blur(20px);
