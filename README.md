@@ -63,7 +63,7 @@ No frameworks, no build tools required. Just open `index.html` in any modern bro
 
 | Page | URL |
 |------|-----|
-| Dashboard | [codewizardprotech.netlify.app](https://codewizardprotech.netlify.app) |
+| Dashboard | [codewizardprotech.github.io/CodeWizardProtech/](https://codewizardprotech.github.io/CodeWizardProtech/) |
 
 ---
 
