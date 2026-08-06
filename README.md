@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="https://codewizardprotech.netlify.app">
+  <a href="https://codewizardprotech.github.io/CodeWizardProtech/">
     <img src="assets/CodeWizardProtech-Dashboard-GitHub.png" alt="Click to visit my dashboard" width="100%" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://codewizardprotech.netlify.app">
+  <a href="https://codewizardprotech.github.io/CodeWizardProtech/">
     <img src="https://img.shields.io/badge/🌐_Live_Demo-22d3ee?style=for-the-badge" alt="Live Demo" />
   </a>
   <a href="https://github.com/CodeWizardProtech">
