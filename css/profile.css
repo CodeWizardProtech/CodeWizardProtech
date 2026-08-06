@@ -97,14 +97,7 @@
 }
 
 .links a {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  white-space: nowrap;
 }
 
 .metrics {

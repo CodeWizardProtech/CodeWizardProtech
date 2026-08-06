@@ -1,121 +1,76 @@
-/**
- * Background animation: Interconnected Neurons
- */
-class NeuronBackground {
-  constructor() {
-    this.canvas = document.getElementById('bg-canvas');
-    if (!this.canvas) return;
-    this.ctx = this.canvas.getContext('2d');
-    this.particles = [];
-    this.particleCount = this.calculateParticleCount();
-    this.maxDistance = 150;
-    this.mouse = { x: null, y: null, radius: 100 };
-    this.resize();
-    this.init();
-    this.animate();
+const canvas = document.getElementById('bg-canvas');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+  const mouse = { x: null, y: null, radius: 120 };
+  const maxDist = 150;
+  let particles = [];
 
-    window.addEventListener('resize', () => this.resize());
-    window.addEventListener('mousemove', (e) => {
-      this.mouse.x = e.x;
-      this.mouse.y = e.y;
-    });
-    window.addEventListener('mouseout', () => {
-      this.mouse.x = null;
-      this.mouse.y = null;
-    });
+  function count() {
+    return Math.max(30, Math.floor((window.innerWidth * window.innerHeight) / 15000));
   }
 
-  calculateParticleCount() {
-    // Fewer particles on mobile for performance
-    const area = window.innerWidth * window.innerHeight;
-    return Math.floor(area / 15000);
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    particles = Array.from({ length: count() }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      r: Math.random() * 1.5 + 1,
+    }));
   }
 
-  resize() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
-    this.particleCount = this.calculateParticleCount();
-    // Re-initialize particles on major resize to maintain density
-    if (this.particles.length > 0) {
-        this.init();
-    }
-  }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const color = '#22d3ee';
 
-  init() {
-    this.particles = [];
-    for (let i = 0; i < this.particleCount; i++) {
-      this.particles.push({
-        x: Math.random() * this.canvas.width,
-        y: Math.random() * this.canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 1.5 + 1
-      });
-    }
-  }
-
-  draw() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    // Get colors from CSS variables
-    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#22d3ee';
-    
-    for (let i = 0; i < this.particles.length; i++) {
-      const p = this.particles[i];
-      
-      // Update position
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
       p.x += p.vx;
       p.y += p.vy;
-      
-      // Bounce off edges
-      if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
-      
-      // Mouse interaction
-      if (this.mouse.x != null && this.mouse.y != null) {
-        let dx = p.x - this.mouse.x;
-        let dy = p.y - this.mouse.y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < this.mouse.radius) {
-            const force = (this.mouse.radius - dist) / this.mouse.radius;
-            p.x += dx * force * 0.05;
-            p.y += dy * force * 0.05;
+      if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      if (mouse.x != null) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < mouse.radius) {
+          const f = (mouse.radius - d) / mouse.radius;
+          p.x += dx * f * 0.05;
+          p.y += dy * f * 0.05;
         }
       }
-      
-      // Draw particle
-      this.ctx.beginPath();
-      this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      this.ctx.fillStyle = accentColor;
-      this.ctx.globalAlpha = 0.4;
-      this.ctx.fill();
-      
-      // Draw connections
-      for (let j = i + 1; j < this.particles.length; j++) {
-        const p2 = this.particles[j];
-        const dx = p.x - p2.x;
-        const dy = p.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        if (dist < this.maxDistance) {
-          this.ctx.beginPath();
-          this.ctx.moveTo(p.x, p.y);
-          this.ctx.lineTo(p2.x, p2.y);
-          this.ctx.strokeStyle = accentColor;
-          this.ctx.globalAlpha = (1 - dist / this.maxDistance) * 0.2;
-          this.ctx.lineWidth = 0.5;
-          this.ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.4;
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x, dy = p.y - p2.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < maxDist) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = color;
+          ctx.globalAlpha = (1 - d / maxDist) * 0.2;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
         }
       }
     }
-    this.ctx.globalAlpha = 1.0;
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
   }
 
-  animate() {
-    this.draw();
-    requestAnimationFrame(() => this.animate());
-  }
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  window.addEventListener('mouseout',  () => { mouse.x = null; mouse.y = null; });
+
+  resize();
+  draw();
 }
-
-// Start animation
-new NeuronBackground();
